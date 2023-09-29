@@ -75,7 +75,6 @@ p {
     line-height: 1.17;
     letter-spacing: 0.54px;
     text-transform: uppercase;
-    display: inline-block;
     text-decoration: none;
     margin-right: 76px;
 }
@@ -99,27 +98,13 @@ p {
     text-transform: capitalize;
     color: #2E2F42;
     padding: 24px 0;
-    transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-link:active,
 .header-link:hover,
 .header-link:focus {
     color: #404BBF;
-}
-
-.header-link:active::after,
-.header-link:hover::after,
-.header-link:focus::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    display: block;
-    width: 48px;
-    height: 4px;
-    border-radius: 2px;
-    background-color: #404bbf;
 }
 
 .page {
@@ -168,7 +153,7 @@ p {
 
 .hero {
     background-color: #2E2F42;
-    background-image: linear-gradient(rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.70)), url(../images/people-office.jpg);
+    background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.70), rgba(46, 47, 66, 0.70)), url(../images/people-office.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -228,13 +213,11 @@ p {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 264px;
     height: 112px;
     background-color: #F4F4FD;
     border-radius: 4px;
     margin-bottom: 8px;
     border: 1px solid #8E8F99;
-    padding: 24px 100px;
 }
 
 .goals-ul {
@@ -245,6 +228,10 @@ p {
 
 .goals-item {
     width: calc((100% - 3 * 24px)/4);
+}
+
+.goals-icon {
+    fill: currentColor;
 }
 
 .title {
@@ -271,6 +258,11 @@ p {
     overflow: hidden;
 }
 
+.icon-container {
+    padding: 32px 0;
+    text-align: center;
+}
+
 .goals-title {
     color: #2E2F42;
     font-size: 20px;
@@ -285,13 +277,14 @@ p {
     font-size: 16px;
     line-height: 1.5;
     letter-spacing: 0.32px;
+    margin-bottom: 8px;
 }
 
 /* Section Team*/
 
 .section-team {
+    background-image: linear-gradient(to bottom, rgba(244, 244, 253, 1), rgba(244, 244, 253, 1));
     padding: 120px 0;
-    background: #F4F4FD;
 }
 
 .team-title {
@@ -348,11 +341,7 @@ p {
     gap: 24px;
 }
 
-.list-soc {
-
-}
-
-.team-icon {
+.link-soc {
     background-color: #4D5AE5;
     display: flex;
     align-items: center;
@@ -365,8 +354,12 @@ p {
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.team-icon:hover,
-.team-icon:focus {
+.team-icon {
+    
+}
+
+.link-soc:hover,
+.link-soc:focus {
     background-color: #404BBF;
 }
 
@@ -405,7 +398,7 @@ p {
 }
 
 .portfolio-item:hover {
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16);
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08), 0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .container-app {
@@ -519,7 +512,7 @@ p {
     gap: 16px;
 }
 
-.footer-icon {
+.link-soc-footer {
     background-color: #4D5AE5;
     display: flex;
     align-items: center;
@@ -532,7 +525,17 @@ p {
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.link-soc-footer:hover,
+.link-soc-footer:focus {
+    background-color: #31d0aa;
+}
+
+
 .footer-icon:hover,
 .footer-icon.cover {
     background-color: #404BBF;
+}
+
+.footer-icon {
+
 }
